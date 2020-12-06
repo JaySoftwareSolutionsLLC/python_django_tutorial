@@ -9,15 +9,15 @@ class Profile(models.Model):
     def __str__(self):
         return f'{self.user.username} Profile'
 
-    def save(self, *args, **kwargs):
-        super(Profile, self).save(*args, **kwargs) # Run save method of parent class
+    # def save(self, *args, **kwargs):
+    #     super(Profile, self).save(*args, **kwargs) # Run save method of parent class
         
-        img = Image.open(self.image.path) # Open image of current instance
+    #     img = Image.open(self.image.path) # Open image of current instance
 
-        max_height = 300
-        max_width = 300
+    #     max_height = 300
+    #     max_width = 300
 
-        if img.height > max_height or img.width > max_width:
-            output_size = (max_height, max_width)
-            img.thumbnail(output_size)
-            img.save(self.image.path)
+    #     if img.height > max_height or img.width > max_width:
+    #         output_size = (max_height, max_width)
+    #         img.thumbnail(output_size)
+    #         img.save(self.image.path)
